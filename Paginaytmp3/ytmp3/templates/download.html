@@ -1,0 +1,71 @@
+{% extends "utilidad.html" %}
+{%load static%}
+
+{% block title %} Download{% endblock %}
+
+{%block css%}<link type="text/css" href="{% static 'css/download.css' %}" rel="stylesheet" />{% endblock%}
+{%block js%}<script type="text/javascript" src="{% static 'js/download.js' %}"></script>{% endblock%}
+
+{% block content %}
+    <div class="container cuerpodownload">
+        <div class="row">
+            <div class="col">
+                <div class="embed-responsive embed-responsive-4by3">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/tvTRZJ-4EyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col">
+                <form action="/download/" method="POST">
+                    {% csrf_token %}
+                    <span class="fw-bold text-decoration-underline mb-1 mt-1"> Seleccione el formato: </span><br>
+
+                    <!-- RadioButtons para seleccionar tipo de formato -->
+
+                    <div class="btn-group mb-1 mt-1 w-75" role="group" aria-label="Basic radio toggle button group">
+                      <input type="radio" value="Mp3" class="btn-check" name="btnquality" id="btnmp3" autocomplete="off" onchange="javascript:showContent()">
+                      <label class="btn btn-outline-primary" for="btnmp3">MP3</label>
+
+                      <input type="radio" value="Mp4" class="btn-check" name="btnquality" id="btnmp4" autocomplete="off"  onchange="javascript:showContent()">
+                      <label class="btn btn-outline-primary" for="btnmp4">MP4(Solo video)</label>
+
+                      <input type="radio" value="Mp4" class="btn-check " name="btnquality" id="btnvid" autocomplete="off"  onchange="javascript:showContent()">
+                      <label class="btn btn-outline-primary" for="btnvid">Video(Audio y video))</label>
+                    </div>
+
+                    <!-- Inputs para seleccionar calidad del archivo -->
+                    <span class="fw-bold text-decoration-underline mb-1 mt-1" style="display:none" id="spanInput">Seleccione la calidad: </span>
+                    <!-- Input MP3 -->
+                    <div class="input-group mb-3 w-75" id="dropmp3" style="display:none">
+                      <label class="input-group-text" for="inputCalidadMp3">Calidad</label>
+                          <select class="form-select" id="inputCalidadMp3" name="inputCalidadMp3">
+                            {% for mp3 in info_mp3 %}
+                            <option value="{{mp3.itag}}">{{mp3.abr}}</option>
+                            {% endfor %}
+                          </select>
+                    </div>
+                    <!-- Input MP4 -->
+                    <div class="input-group mb-3 w-75" id="dropmp4" style="display:none" >
+                      <label class="input-group-text" for="inputCalidadMp4">Calidad</label>
+                          <select class="form-select" id="inputCalidadMp4" name="inputCalidadMp4" >
+                            {% for mp4 in info_mp4 %}
+                            <option value="{{mp4.itag}}">{{mp4.resolution}} ( Codec: {{mp4.video_codec}} )</option>
+                            {% endfor %}
+                          </select>
+                    </div>
+                    <!-- Input VID -->
+                    <div class="input-group mb-3 mt-1 w-75" id="dropvid" style="display:none">
+                        <label class="input-group-text" for="inputCalidadVid">Calidad</label>
+                            <select class="form-select" id="inputCalidadVid" name="inputCalidadVid">
+                                {% for vid in info_vid %}
+                                <option value="{{vid.itag}}">{{vid.resolution}}</option>
+                                {% endfor %}
+                            </select>
+                    </div>
+                    <div class="mb-3 text-center w-75" id="btnDescarga" style="display:none">
+                        <button class="btn btn-success" type="submit" value="descargar">Descargar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+#question{
+    height: 50rem;
+    width: 50rem;
+    display: block;
+    margin: auto;
+    background-color: rgba(248,249,250,255);
+
+}
+
+.pasos{
+    margin-top: 100px;
+}
+
+.pasos > p {
+    font-family: thin;
+    font-size: 20px;
+
+}

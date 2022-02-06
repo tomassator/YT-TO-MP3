@@ -1,0 +1,55 @@
+{% extends "utilidad.html"%}
+{% load static %}
+
+{% block title %} Titulo {% endblock %}
+
+{%block css%}<link type="text/css" href="{% static 'css/comodescargar.css' %}" rel="stylesheet" />{% endblock%}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">¿Como descargar de Youtube a MP3?</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-5">
+                <img src="{%static 'img/question.jpg' %}" id="question">
+            </div>
+            <div class="col-6 pasos">
+                <h1 class="text-center"> PASO 1</h1>
+                <p>
+                    Lo primero que debe hacer es ir a Youtube y buscar el video que desea descargar en MP3 o MP4.
+                    Una vez que encontro el video, debe copiar el link que aparece en la barra de navegacion.
+                    <br>
+                    Por ejemplo: https://www.youtube.com/watch?v=8BG8YfT8A20
+                </p>
+                <h1 class="text-center"> PASO 2</h1>
+                <p>
+                    Una vez que tiene el link copiado, dirigirse a pagina principal y pegar el link en donde se le indica.
+                    Ya puesto el link, lo siguiente que debe hacer es pulsar el boton descargar
+                </p>
+                <h1 class="text-center"> PASO 3</h1>
+                <p>
+                    En este punto va a poder visualizar una pagina, en donde tiene a su izquierda el video que eligio y a su derecha
+                    una opcion para elegir el formato. Seleccione un formato
+                </p>
+                <h1 class="text-center"> PASO 4</h1>
+                <p>
+                    Si selecciono el formato se le habilitara otra opcion para seleccionar la calidad del archivo. Seleccione
+                    la calidad del archivo.
+                </p>
+
+                <h1 class="text-center"> PASO 5</h1>
+                <p class="text-center">
+                    Pulse el boton descargar y en breve comenzara su descarga.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

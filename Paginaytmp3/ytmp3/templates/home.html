@@ -1,0 +1,62 @@
+{% extends "utilidad.html" %}
+{%load static%}
+
+{% block title %} Home{% endblock %}
+
+{%block css%}<link type="text/css" href="{% static 'css/home.css' %}" rel="stylesheet" />{% endblock%}
+
+{% block content %}
+    <div class="container cuerpo">
+        <!-- fila que contiene el titulo y el panel de descarga -->
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center"> </h1>
+            </div>
+        </div>
+        <div class="row filacuerpo text-center">
+            <div class="col-8 colform offset-md-2">
+                <img src="{%static 'img/youtube3.svg' %}" alt="Youtube" id="youtube">
+                <!-- Formulario para ingresar link del video -->
+                <form action="/download/" method="GET">
+                    <div class="mb-3">
+                        <input type="search" class="form-control"  id="linkYT" placeholder="Ingrese el link del video" name="linkYT" required>
+                    </div>
+                    <!-- Boton para enviar video -->
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-primary" type="submit" value="Descargar">Descargar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Fila que contiene las cards -->
+        <div class="row border-bottom border-top filacard">
+            <div class="col">
+                <div class="card mx-auto" style="width: 18rem;">
+                  <img src="{%static 'img/mp3.svg' %}" class="card-img-top mx-auto" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Descarga MP3</h5>
+                    <p class="card-text">Convierte los videos de youtube en audios MP3, de manera rapida y sencilla para escucharlo en cualquier dispositivo.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mx-auto" style="width: 18rem;">
+                  <img src="{%static 'img/video.svg' %}" class="card-img-top mx-auto" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Descarga MP4/Video</h5>
+                    <p class="card-text ">Descarga los videos de youtube con su mejor calidad. Ademas puedes optar por descargar solo el video sin su audio.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mx-auto" style="width: 18rem;">
+                  <img src="{%static 'img/security.svg' %}" class="card-img-top mx-auto" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Descarga Segura</h5>
+                    <p class="card-text ">Descargue de manera segura , sin redirecciones ni publicidades ocultas.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+#youtube{
+    height: 50%;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+
+
+.filacuerpo{
+    padding-top: 15%;
+    padding-bottom: 15%;
+    background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("/static/img/fondo.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.form-control{
+    width:50%;
+    display: block;
+    margin: auto;
+    margin-top:50px;
+}
+
+.colform{
+    height:20rem;
+    border-style: groove;
+    border-width: 5px;
+}
+
+
+.card-img-top{
+    height: 6rem;
+    width: 6rem;
+}
+
+.filacard{
+    padding-top: 2%;
+    padding-bottom:2%;
+    background-color: rgba(224,219,213,.2);
+}
+
+

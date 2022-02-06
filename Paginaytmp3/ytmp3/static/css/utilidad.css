@@ -1,0 +1,22 @@
+
+.barra{
+    background-color: rgba(224,219,213,.4);
+}
+
+.barra2{
+    background-color:red;
+}
+
+.nav-link{
+    margin-right:50px;
+}
+
+.filafot > div > a{
+    color: black;
+}
+
+.footer{
+    padding-top:5%;
+    background-color: rgba(224,219,213,.4);
+
+}
